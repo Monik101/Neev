@@ -20,7 +20,7 @@ function AnimationComponent() {
 
       setTimeout(() => {
         setDivs((prev) => prev.filter((div) => div.id !== newDiv.id));
-      }, 3000);
+      }, 1000);
     }, 500);
 
     return () => clearInterval(interval);
@@ -37,7 +37,7 @@ function AnimationComponent() {
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{
                 x: { type: "spring", stiffness: 100, damping: 15 },
-                opacity: { duration: 8 },
+                opacity: { duration: 2 },
               }}
               className="absolute w-20 h-10 bg-black shadow-xl rounded-3xl"
               style={{
@@ -48,7 +48,9 @@ function AnimationComponent() {
         </AnimatePresence>
       </div>
       <div className="bg-blue-500 h-24 w-24 rounded-full"></div>
-      <div className="flex-grow"></div>
+      <div className="flex-grow">
+        {/* <div className="h-96 w-56 bg-gray-100"></div> */}
+      </div>
     </div>
   );
 }
